@@ -1,0 +1,7 @@
+.git
+.gitignore
+frontend
+target
+**/target
+*.mv.db
+*.trace.db
