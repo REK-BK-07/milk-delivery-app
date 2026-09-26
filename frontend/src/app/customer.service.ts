@@ -1,12 +1,12 @@
-import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Customer, CustomerRequest, MilkEntry, MilkEntryRequest, MonthlyBill } from './models';
 
 @Injectable({ providedIn: 'root' })
 export class CustomerService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = 'http://localhost:8080/api';
+ private readonly apiUrl = '/api';
 
   getCustomers(): Observable<Customer[]> {
     return this.http.get<Customer[]>(`${this.apiUrl}/customers`);
