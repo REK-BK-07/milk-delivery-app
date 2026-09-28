@@ -12,7 +12,9 @@ import java.util.List;
 public class CustomerService {
     private final CustomerRepository customers;
 
-    public CustomerService(CustomerRepository customers) { this.customers = customers; }
+    public CustomerService(CustomerRepository customers) {
+        this.customers = customers;
+    }
 
     @Transactional
     public CustomerResponse create(CustomerRequest request) {

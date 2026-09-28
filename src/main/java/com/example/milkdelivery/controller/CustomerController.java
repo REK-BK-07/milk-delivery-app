@@ -12,12 +12,18 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class CustomerController {
     private final CustomerService service;
-    public CustomerController(CustomerService service) { this.service = service; }
+    public CustomerController(CustomerService service) {
+        this.service = service;
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CustomerResponse create(@Valid @RequestBody CustomerRequest request) { return service.create(request); }
+    public CustomerResponse create(@Valid @RequestBody CustomerRequest request) {
+        return service.create(request);
+    }
 
     @GetMapping
-    public List<CustomerResponse> findAll() { return service.findAll(); }
+    public List<CustomerResponse> findAll() {
+        return service.findAll();
+    }
 }

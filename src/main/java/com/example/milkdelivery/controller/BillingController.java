@@ -13,7 +13,9 @@ import jakarta.validation.constraints.Max;
 @Validated
 public class BillingController {
     private final MilkEntryService service;
-    public BillingController(MilkEntryService service) { this.service = service; }
+    public BillingController(MilkEntryService service) {
+        this.service = service;
+    }
 
     @GetMapping("/monthly")
     public MonthlyBillResponse monthlyBill(@RequestParam @Min(1) Long customerId,

@@ -12,9 +12,13 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*")
 public class MilkEntryController {
     private final MilkEntryService service;
-    public MilkEntryController(MilkEntryService service) { this.service = service; }
+    public MilkEntryController(MilkEntryService service) {
+        this.service = service;
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public MilkEntryResponse create(@Valid @RequestBody MilkEntryRequest request) { return service.create(request); }
+    public MilkEntryResponse create(@Valid @RequestBody MilkEntryRequest request) {
+        return service.create(request);
+    }
 }
